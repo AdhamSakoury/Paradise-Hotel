@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hotel</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" />
+        <link rel="stylesheet" href="css/all.min.css" />
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-white px-4 py-3 shadow-sm sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="imgs/logo.png" alt="logo" class="logo" />
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav gap-lg-4 text-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="explore.html">Explore</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="room.html">Rooms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="d-none d-lg-block">
+                    <button class="btn text-white px-4 py-2 rounded-3 book-btn">Book now</button>
+                </a>
+            </div>
+        </nav>
+        <section class="home-page">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+                        <h2 class="pb-3 fw-semibold">Paradise View</h2>
+                        <h1 class="fw-bold mb-3">Hotel for every moment rich in emotion</h1>
+                        <p class="mb-1 text-muted">Every moment feels like the first time in paradise view</p>
+                        <div class="d-flex gap-3 justify-content-center justify-content-lg-start mt-4">
+                            <a href="#" class="d-lg-block">
+                                <button class="btn text-white px-4 py-2 book-btn">Book now</button>
+                            </a>
+                            <a href="#" class="btn tour-btn d-flex align-items-center gap-3 px-3 py-2 rounded-3">
+                                <span class="play-icon d-flex align-items-center justify-content-center">
+                                    <i class="fa fa-play text-white"></i>
+                                </span>
+                                <span class="text-black">Take a tour</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img src="imgs/Rectangle 5.png" alt="Hotel View" class="img-fluid rounded shadow" />
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-4 shadow mt-5">
+                    <div class="row g-3 align-items-end">
+                        <div class="col-md-2">
+                            <img src="imgs/Vector.png" alt="location" class="icon">
+                            <label class="form-label">Location</label>
+                            <select class="form-select">
+                                <option selected>Abuja</option>
+                                <option>Cairo</option>
+                                <option>Dubai</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="imgs/Vector1.png" alt="location" class="icon">
+                            <label class="form-label">Room type</label>
+                            <select class="form-select">
+                                <option selected>Standard</option>
+                                <option>Luxury</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="imgs/Vector2.png" alt="location" class="icon">
+                            <label class="form-label">Person</label>
+                            <select class="form-select">
+                                <option>01</option>
+                                <option>02</option>
+                                <option>03</option>
+                                <option>04</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="imgs/Vector3.png" alt="location" class="icon">
+                            <label class="form-label">Check In</label>
+                            <input type="date" class="form-control" value="2023-03-08" />
+                        </div>
+                        <div class="col-md-2">
+                            <img src="imgs/Vector3.png" alt="location" class="icon">
+                            <label class="form-label">Check Out</label>
+                            <input type="date" class="form-control" value="2023-03-13" />
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center justify-content-lg-end">
+                            <a href="#" class="d-block">
+                                <button class="btn text-white px-4 py-2 rounded-3 book-btn">Book now</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-2">
+                <div class="main-heading text-center py-5 fw-semibold">
+                    <h2>Our Facilities</h2>
+                    <p>We offer modern (5 star) hotel facilities for your comfort.</p>
+                </div>
+                <div class="row g-3 mx-0 px-4 py-4">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="feature-box text-center">
+                            <img src="imgs/makiSwimming0.png" alt="swimming" class="feature-icon">
+                            <p class="fs-6 fw-medium m-0">Swimming Pool</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="feature-box text-center">
+                            <img src="imgs/Vector4.png" alt="wifi" class="feature-icon">
+                            <p class="fs-6 fw-medium m-0">Wifi</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="feature-box text-center">
+                            <img src="imgs/Vector5.png" alt="breakfast" class="feature-icon">
+                            <p class="fs-6 fw-medium m-0">Breakfast</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="feature-box text-center">
+                            <img src="imgs/Vector6.png" alt="gym" class="feature-icon">
+                            <p class="fs-6 fw-medium m-0">Gym</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="feature-box text-center">
+                            <img src="imgs/Vector7.png" alt="game" class="feature-icon">
+                            <p class="fs-6 fw-medium m-0">Game center</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="feature-box text-center">
+                            <img src="imgs/Vector8.png" alt="24/7" class="feature-icon">
+                            <p class="fs-6 fw-medium m-0">24/7 Light</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="feature-box text-center">
+                            <img src="imgs/Vector9.png" alt="laundry" class="feature-icon">
+                            <p class="fs-6 fw-medium m-0">Laundry</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="feature-box text-center">
+                            <img src="imgs/Vector0.png" alt="parking" class="feature-icon">
+                            <p class="fs-6 fw-medium m-0">Parking space</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-3">
+                <div class="overlay">
+                    <div class="main-heading text-center py-5 fw-semibold">
+                        <h2 class="room pb-5 position-relative display-4 text-white">Luxurios Rooms</h2>
+                        <p class="text-white fs-5">All room are design for your comfort</p>
+                    </div>
+                    <div class="row g-4 mx-0 justify-content-center">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card room-card p-3 h-100 shadow-sm border-0 rounded-4 text-center">
+                                <div class="position-relative">
+                                    <img src="imgs/Rectangle 10.png" class="w-100 rounded-3 mb-3" alt="room 1">
+                                    <span class="badge position-absolute top-0 end-0 m-2 d-flex align-items-center justify-content-center">2 Rooms available</span>
+                                </div>
+                                <p class="fs-5 m-0">Television set, Extra sheets and Breakfast</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card room-card p-3 h-100 shadow-sm border-0 rounded-4 text-center">
+                                <div class="position-relative">
+                                    <img src="imgs/video.png" class="w-100 rounded-3 mb-3" alt="room 2">
+                                    <span class="badge position-absolute top-0 end-0 m-2 d-flex align-items-center justify-content-center">4 Rooms available</span>
+                                </div>
+                                <p class="fs-5 m-0">Television set, Extra sheets, Breakfast, and fireplace</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card room-card p-3 h-100 shadow-sm border-0 rounded-4 text-center">
+                                <div class="position-relative">
+                                    <img src="imgs/Rectangle 26.png" class="w-100 rounded-3 mb-3" alt="room 3">
+                                    <span class="badge position-absolute top-0 end-0 m-2 d-flex align-items-center justify-content-center">3 Rooms available</span>
+                                </div>
+                                <p class="fs-5 m-0">Television set, Extra sheets, Breakfast, fireplace, Console, and bed rest</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-4">
+                <div class="main-heading text-center py-5 fw-semibold">
+                    <h2>Testimonies</h2>
+                </div>
+                <div class="row g-4 mx-0 justify-content-center py-3">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="boxes-1 rounded-3 p-3 shadow-sm">
+                            <div class="rate-time d-flex gap-5 align-items-center">
+                                <div class="date text-black-50">2 Mar. 2025</div>
+                                <div class="rate">
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p class="fs-6 fw-medium">
+                                    The service at the Hotel Monteleone was exceptional.
+                                    There was absolutely no issue that was not addressed timely and with satisfactory results. 
+                                    We were particulary impressed with how the hotel staff anticipated our needs (periodically coming by the Board Room to check with us). 
+                                    Numerous conference attendees commented on the quality of the food, the quality of the service and overall positive attitude toward the conference site. 
+                                    Particular noteworthy is the longevity of the staff and that sense of investment in the success of every event. 
+                                    I usually offer suggestions for improvements (part of being a marketing professor),
+                                    but there is absolutely nothing that could be improved – you have set the bar very high.
+                                </p>
+                            </div>
+                            <div class="person d-flex align-items-center gap-4">
+                                <img src="imgs/Ellipse 5.png" alt="Person 1">
+                                <h4 class="fs-6 fw-medium">Anthony Bruff</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="boxes-1 rounded-3 p-3 shadow-sm">
+                            <div class="rate-time d-flex gap-5 align-items-center">
+                                <div class="date text-black-50">25 Mar. 2025</div>
+                                <div class="rate">
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p class="fs-6 fw-medium">
+                                    The service at the Hotel Monteleone was exceptional.
+                                    There was absolutely no issue that was not addressed timely and with satisfactory results. 
+                                    We were particulary impressed with how the hotel staff anticipated our needs (periodically coming by the Board Room to check with us). 
+                                    Numerous conference attendees commented on the quality of the food, the quality of the service and overall positive attitude toward the conference site. 
+                                    Particular noteworthy is the longevity of the staff and that sense of investment in the success of every event. 
+                                    I usually offer suggestions for improvements (part of being a marketing professor),
+                                    but there is absolutely nothing that could be improved – you have set the bar very high.
+                                </p>
+                            </div>
+                            <div class="person d-flex align-items-center gap-4">
+                                <img src="imgs/Ellipse 55.png" alt="Person 1">
+                                <h4 class="fs-6 fw-medium">Regina Gella</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="boxes-1 rounded-3 p-3 shadow-sm">
+                            <div class="rate-time d-flex gap-5 align-items-center">
+                                <div class="date text-black-50">5 Apr. 2025</div>
+                                <div class="rate">
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p class="fs-6 fw-medium">
+                                    The service at the Hotel Monteleone was exceptional.
+                                    There was absolutely no issue that was not addressed timely and with satisfactory results. 
+                                    We were particulary impressed with how the hotel staff anticipated our needs (periodically coming by the Board Room to check with us). 
+                                    Numerous conference attendees commented on the quality of the food, the quality of the service and overall positive attitude toward the conference site. 
+                                    Particular noteworthy is the longevity of the staff and that sense of investment in the success of every event. 
+                                    I usually offer suggestions for improvements (part of being a marketing professor),
+                                    but there is absolutely nothing that could be improved – you have set the bar very high.
+                                </p>
+                            </div>
+                            <div class="person d-flex align-items-center gap-4">
+                                <img src="imgs/Ellipse 555.png" alt="Person 1">
+                                <h4 class="fs-6 fw-medium">Jamiyu Aliyu</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="pt-5 pb-4 text-white">
+            <div class="container">
+                <div class="row g-4 mx-0 px-4 py-5 justify-content-between">
+                    <div class="col-lg-3">
+                        <h3 class="mb-3 fs-2 fw-medium" style="font-family: 'Dancing Script'">Paradise view</h3>
+                        <p class="fs-6">
+                            The service at the Hotel Monteleone was exceptional. There was absolutely no issue that was not addressed timely and with satisfactory results. 
+                            We were particulary impressed with how the hotel staff anticipated our needs (periodically coming by the Board Room to check with us)
+                        </p>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <h5 class="fw-semibold">Quick links</h5>
+                        <ul class="list-unstyled">
+                            <li><a class="nav-link p-0" href="room.html">Room booking</a></li>
+                            <li><a class="nav-link p-0" href="room.html">Rooms</a></li>
+                            <li><a class="nav-link p-0" href="contact.html">Contact</a></li>
+                            <li><a class="nav-link p-0" href="explore.html">Explore</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <h5 class="fw-semibold">Company</h5>
+                        <ul class="list-unstyled">
+                            <li><a class="nav-link p-0" href="#">Privacy policy</a></li>
+                            <li><a class="nav-link p-0" href="#">Refund policy</a></li>
+                            <li><a class="nav-link p-0" href="#">F.A.Q</a></li>
+                            <li><a class="nav-link p-0" href="about.html">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <h5 class="fw-semibold">Social media</h5>
+                        <ul class="list-unstyled">
+                            <li><a class="nav-link p-0" href="#">Facebook</a></li>
+                            <li><a class="nav-link p-0" href="#">Twitter</a></li>
+                            <li><a class="nav-link p-0" href="#">Instagram</a></li>
+                            <li><a class="nav-link p-0" href="#">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center text-md-start">
+                        <h5 class="fw-semibold">Newsletter</h5>
+                        <p class="small">
+                            Kindly subscribe to our newsletter to get latest deals on our rooms and vacation discount.
+                        </p>
+                        <form class="position-relative mt-3" action="#">
+                            <input type="email" class="form-control pe-5 py-3 fs-6 rounded" placeholder="Enter your email">
+                            <input type="submit" class="book-btn position-absolute top-50 end-0 translate-middle-y me-2 py-2 px-3 fw-semibold" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+                <hr class="my-4 border-white-50">
+                <p class="text-center m-0 small" style="font-family: Raleway;">Paradise view 2025</p>
+            </div>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-color: #7c6a46;
+    --main-bg-color : #fafafa;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.book-btn {
+    background-color: var(--main-color);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+@media (min-width:992px) {
+    .book-btn:hover {
+        background-color: #5f5434;
+        transform: scale(1.05);
+    }
+}
+
+nav .logo {
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+nav .logo:hover {
+    transform: scale(1.1);
+}
+
+nav .navbar-nav .nav-link {
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav .navbar-nav .nav-link.active,
+nav .navbar-nav .nav-link:hover {
+    color: var(--main-color);
+}
+
+nav .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+section .main-landing {
+    background-image: url(../imgs/video.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+section .main-landing .overlay {
+    background-color: rgba(124, 106, 70, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+section .main-landing .text {
+    font-family: 'Mulish', sans-serif !important;
+}
+
+section .main-landing .text p {
+    max-width: 800px;
+    margin: auto;
+}
+
+section .main-landing .overlay .mouse-scroll {
+    width: 40px;
+    height: 70px;
+    border: 2px solid white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section .main-landing .overlay .mouse-scroll i {
+    color: white;
+    font-size: 20px;
+    animation: bouncing .8s ease-in-out infinite;
+    -webkit-animation: bouncing .8s ease-in-out infinite;
+    -moz-animation: bouncing .8s ease-in-out infinite;
+    -ms-animation: bouncing .8s ease-in-out infinite;
+    -o-animation: bouncing .8s ease-in-out infinite;
+}
+
+section .cards {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+section .cards:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+section .cards img {
+    height: 220px;
+    object-fit: cover;
+}
+
+section .title h3, .title p, section .card-body p {
+    font-family: 'Mulish', sans-serif;
+    color: var(--main-color) !important;
+}
+
+section .card-body .book hr {
+    border-color: var(--main-color);
+}
+
+section .vector {
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+section .vector img {
+    width: 60%;
+    height: auto;
+}
+
+
+@media (max-width: 768px) {
+    .cards img {
+        height: 180px;
+    }
+    .book {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+
+footer {
+    background-color: var(--main-color);
+}
+
+footer .nav-link {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+footer .nav-link:hover {
+    color: #e0e0e0;
+}
+
+footer form {
+    width: 340px;
+    position: relative;
+}
+
+footer form input[type="email"] {
+    background-color: white;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    height: 48px;
+    padding-right: 120px;
+    color: #333;
+    font-size: 15px;
+}
+
+footer form input[type="email"]::placeholder {
+    color: #999;
+}
+
+footer form input[type="submit"] {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    height: 36px;
+    padding: 0 18px;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+@keyframes bouncing { 
+    0% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(10px);
+    }
+    60% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
