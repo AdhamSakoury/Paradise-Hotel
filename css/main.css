@@ -6,8 +6,86 @@
 }
 
 :root {
+    /* Light Mode Colors */
     --main-color: #7c6a46;
-    --main-bg-color : #fafafa;
+    --main-color-rgb: 124, 106, 70;
+    --main-bg-color: #fafafa;
+    --text-color: #000000;
+    --card-bg: #ffffff;
+    --footer-bg: #7c6a46;
+    --input-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --overlay-bg: rgba(124, 106, 70, 0.8);
+    
+    /* Dark Mode Colors */
+    --dark-bg: #1a1814;
+    --dark-surface: #24201b;
+    --dark-card: #2d2822;
+    --dark-text: #f5f0e8;
+    --dark-text-muted: #a89a8a;
+    --dark-border: #3d352c;
+    --dark-shadow: rgba(0, 0, 0, 0.3);
+    --accent-gold: #c9a962;
+}
+
+.dark-mode {
+    --main-bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+    --card-bg: var(--dark-card);
+    --footer-bg: var(--dark-surface);
+    --input-bg: var(--dark-surface);
+    --border-color: var(--dark-border);
+    --shadow-color: var(--dark-shadow);
+    --overlay-bg: rgba(26, 24, 20, 0.85);
+}
+
+/* Smooth transitions */
+body, .card, .feature-box, .boxes-1, footer, input, select, textarea, .form-control, .form-select, nav.navbar {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--main-color);
+    border: 2px solid white;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: var(--accent-gold);
+}
+
+.theme-toggle i {
+    color: white;
+    font-size: 20px;
+}
+
+.dark-mode .theme-toggle {
+    background: var(--accent-gold);
+    border-color: var(--dark-border);
+}
+
+.dark-mode .theme-toggle:hover {
+    background: var(--main-color);
 }
 
 ul {
@@ -25,6 +103,8 @@ html {
 .book-btn {
     background-color: var(--main-color);
     transition: background-color 0.3s ease, transform 0.3s ease;
+    color: white;
+    border: none;
 }
 
 @media (min-width:992px) {
@@ -32,6 +112,22 @@ html {
         background-color: #5f5434;
         transform: scale(1.05);
     }
+    
+    .dark-mode .book-btn:hover {
+        background-color: var(--accent-gold);
+        color: var(--dark-bg);
+    }
+}
+
+.dark-mode .book-btn {
+    background-color: var(--accent-gold);
+    color: var(--dark-bg);
+}
+
+/* Navigation */
+nav.navbar {
+    background-color: var(--card-bg) !important;
+    box-shadow: 0 2px 10px var(--shadow-color);
 }
 
 nav .logo {
@@ -44,7 +140,7 @@ nav .logo:hover {
 }
 
 nav .navbar-nav .nav-link {
-    color: black;
+    color: var(--text-color);
     font-size: 16px;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -55,10 +151,20 @@ nav .navbar-nav .nav-link:hover {
     color: var(--main-color);
 }
 
+.dark-mode nav .navbar-nav .nav-link.active,
+.dark-mode nav .navbar-nav .nav-link:hover {
+    color: var(--accent-gold);
+}
+
 nav .navbar-toggler:focus {
     box-shadow: none;
 }
 
+nav .navbar-toggler i {
+    color: var(--text-color);
+}
+
+/* Home Page Hero */
 section .container h2 {
     width: 262px;
     font-size: 50px;
@@ -69,6 +175,10 @@ section .container h2 {
     display: inline-block;
 }
 
+.dark-mode section .container h2 {
+    color: var(--accent-gold);
+}
+
 section .book-btn {
     margin-top: 10px;
     border-radius: 70px;
@@ -77,6 +187,7 @@ section .book-btn {
 section .tour-btn {
     background-color: transparent;
     border: none;
+    color: var(--text-color);
 }
 
 section .tour-btn .play-icon {
@@ -97,6 +208,14 @@ section .tour-btn .play-icon:hover {
     background-color: #00998c;
 }
 
+.dark-mode section .tour-btn .play-icon {
+    background-color: var(--accent-gold);
+}
+
+.dark-mode section .tour-btn .play-icon:hover {
+    background-color: var(--main-color);
+}
+
 section .icon {
     width: 20px;
     height: 20px;
@@ -107,7 +226,7 @@ section .icon {
 section .form-label {
     font-weight: 500;
     font-size: 14px;
-    color: #000;
+    color: var(--text-color);
     margin-bottom: 6px;
     display: block;
 }
@@ -117,20 +236,40 @@ section .form-select {
     border-radius: 0.5rem;
     font-size: 14px;
     padding: 0.5rem 0.75rem;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+section .form-control:focus,
+section .form-select:focus {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--main-color-rgb), 0.25);
+}
+
+.dark-mode section .form-control:focus,
+.dark-mode section .form-select:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 0.2rem rgba(201, 169, 98, 0.25);
 }
 
 section .bg-white {
+    background-color: var(--card-bg) !important;
     border-radius: 1.5rem;
     padding: 1.5rem;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px var(--shadow-color);
 }
 
+/* Features Section */
 section .feature-box {
-    background-color: #f9f9f9;
+    background-color: var(--main-bg-color);
     padding: 30px 15px;
     border-radius: 12px;
     transition: 0.3s ease;
     height: 100%;
+    border: 1px solid transparent;
 }
 
 @media (min-width:992px) {
@@ -143,6 +282,20 @@ section .feature-box {
     section .feature-box:hover p {
         color: var(--main-bg-color);
     }
+    
+    .dark-mode section .feature-box:hover {
+        background-color: var(--accent-gold);
+        border-color: var(--accent-gold);
+    }
+    
+    .dark-mode section .feature-box:hover p {
+        color: var(--dark-bg);
+    }
+}
+
+.dark-mode section .feature-box {
+    background-color: var(--dark-surface);
+    border-color: var(--dark-border);
 }
 
 section .feature-icon {
@@ -150,14 +303,19 @@ section .feature-icon {
     height: 48px;
     margin-bottom: 12px;
     object-fit: contain;
-    transition: 0.3 ease;
+    transition: 0.3s ease;
 }
 
 section .feature-box p {
     color: var(--main-color);
-    transition: 0.3 ease;
+    transition: 0.3s ease;
 }
 
+.dark-mode section .feature-box p {
+    color: var(--accent-gold);
+}
+
+/* Rooms Section */
 section .container-3 .main-heading .room::after {
     content: "";
     position: absolute;
@@ -169,6 +327,9 @@ section .container-3 .main-heading .room::after {
     transform: translateX(-50%);
 }
 
+.dark-mode section .container-3 .main-heading .room::after {
+    background-color: var(--accent-gold);
+}
 
 section .container-3 {
     background-image: url(../imgs/Hotel\ rooms\ bg.png);
@@ -187,12 +348,18 @@ section .container-3 {
 
 section .container-3 .overlay {
     width: 100%;
-    background-color: rgba(124, 106, 70, 0.8);
+    background-color: var(--overlay-bg);
     height: 650px;
+}
+
+section .container-3 .card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
 }
 
 section .container-3 .card p {
     font-family: "Raleway", sans-serif !important;
+    color: var(--text-color);
 }
 
 section .container-3 .room-card img {
@@ -205,24 +372,49 @@ section .container-3 .badge {
     border-radius: 2.5px;
     height: 34px;
     padding: 0 10px;
+    color: white;
 }
 
+.dark-mode section .container-3 .badge {
+    background-color: var(--accent-gold);
+    color: var(--dark-bg);
+}
+
+/* Testimonials */
 section .container-4 h2 {
     font-family: "Raleway", sans-serif !important;
+    color: var(--text-color);
 }
 
 section .container-4 .boxes-1 {
-    background-color: var(--main-bg-color);
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode section .container-4 .boxes-1 {
+    background-color: var(--dark-surface);
+    border-color: var(--dark-border);
 }
 
 section .container-4 .boxes-1 .rate {
     color: gold;
 }
 
+.dark-mode section .container-4 .boxes-1 .rate {
+    color: var(--accent-gold);
+}
+
+section .container-4 .boxes-1 .date {
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
 section .container-4 .boxes-1 p {
     font-family: "Raleway", sans-serif !important;
     text-align: justify;
     display: inline-block;
+    color: var(--text-color);
 }
 
 section .container-4 .boxes-1 p::before {
@@ -235,6 +427,10 @@ section .container-4 .boxes-1 p::before {
     color: var(--main-color);
 }
 
+.dark-mode section .container-4 .boxes-1 p::before {
+    color: var(--accent-gold);
+}
+
 section .container-4 .boxes-1 p::after {
     font-family: "Font Awesome 6 Free";
     content: "\f10e";
@@ -245,6 +441,14 @@ section .container-4 .boxes-1 p::after {
     color: var(--main-color);
 }
 
+.dark-mode section .container-4 .boxes-1 p::after {
+    color: var(--accent-gold);
+}
+
+section .container-4 .boxes-1 .person h4 {
+    color: var(--text-color);
+}
+
 section .container-4 .boxes-1 .person img {
     width: 50px;
     height: 50px;
@@ -252,8 +456,14 @@ section .container-4 .boxes-1 .person img {
     border-radius: 50%;
 }
 
+/* Footer */
 footer {
-    background-color: var(--main-color);
+    background-color: var(--footer-bg);
+}
+
+.dark-mode footer {
+    background-color: var(--dark-surface);
+    border-top: 1px solid var(--dark-border);
 }
 
 footer .nav-link {
@@ -267,24 +477,52 @@ footer .nav-link:hover {
     color: #e0e0e0;
 }
 
+.dark-mode footer .nav-link {
+    color: var(--dark-text-muted);
+}
+
+.dark-mode footer .nav-link:hover {
+    color: var(--accent-gold);
+}
+
+footer h3, footer h5 {
+    color: white;
+}
+
+.dark-mode footer h3, .dark-mode footer h5 {
+    color: var(--dark-text);
+}
+
+footer p, footer .small {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode footer p, .dark-mode footer .small {
+    color: var(--dark-text-muted);
+}
+
 footer form {
     width: 340px;
     position: relative;
 }
 
 footer form input[type="email"] {
-    background-color: white;
+    background-color: var(--input-bg);
     width: 100%;
     border: none;
     border-radius: 8px;
     height: 48px;
     padding-right: 120px;
-    color: #333;
+    color: var(--text-color);
     font-size: 15px;
 }
 
 footer form input[type="email"]::placeholder {
     color: #999;
+}
+
+.dark-mode footer form input[type="email"]::placeholder {
+    color: var(--dark-text-muted);
 }
 
 footer form input[type="submit"] {
@@ -301,7 +539,28 @@ footer form input[type="submit"] {
     border: none;
     line-height: 1;
     white-space: nowrap;
+    cursor: pointer;
 }
 
+.dark-mode footer form input[type="submit"] {
+    background-color: var(--accent-gold);
+    color: var(--dark-bg);
+}
 
+footer hr {
+    border-color: rgba(255, 255, 255, 0.3);
+}
 
+.dark-mode footer hr {
+    border-color: var(--dark-border);
+}
+
+/* Text utilities */
+.text-muted {
+    color: var(--text-color) !important;
+    opacity: 0.6;
+}
+
+.dark-mode .text-muted {
+    color: var(--dark-text-muted) !important;
+}

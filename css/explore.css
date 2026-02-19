@@ -5,12 +5,85 @@
 }
 
 :root {
+    /* Light Mode Colors */
     --main-color: #7c6a46;
-    --main-bg-color : #fafafa;
+    --main-color-rgb: 124, 106, 70;
+    --main-bg-color: #fafafa;
+    --text-color: #000000;
+    --card-bg: #ffffff;
+    --footer-bg: #7c6a46;
+    --input-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    
+    /* Dark Mode Colors */
+    --dark-bg: #1a1814;
+    --dark-surface: #24201b;
+    --dark-card: #2d2822;
+    --dark-text: #f5f0e8;
+    --dark-text-muted: #a89a8a;
+    --dark-border: #3d352c;
+    --dark-shadow: rgba(0, 0, 0, 0.3);
+    --accent-gold: #c9a962;
+}
+
+.dark-mode {
+    --main-bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+    --card-bg: var(--dark-card);
+    --footer-bg: var(--dark-surface);
+    --input-bg: var(--dark-surface);
+    --border-color: var(--dark-border);
+    --shadow-color: var(--dark-shadow);
+}
+
+/* Smooth transitions */
+body, section .cards, footer, input, .vector {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 body {
     font-family: "Poppins", sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--main-color);
+    border: 2px solid white;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: var(--accent-gold);
+}
+
+.theme-toggle i {
+    color: white;
+    font-size: 20px;
+}
+
+.dark-mode .theme-toggle {
+    background: var(--accent-gold);
+    border-color: var(--dark-border);
+}
+
+.dark-mode .theme-toggle:hover {
+    background: var(--main-color);
 }
 
 ul {
@@ -28,6 +101,8 @@ html {
 .book-btn {
     background-color: var(--main-color);
     transition: background-color 0.3s ease, transform 0.3s ease;
+    color: white;
+    border: none;
 }
 
 @media (min-width:992px) {
@@ -35,6 +110,22 @@ html {
         background-color: #5f5434;
         transform: scale(1.05);
     }
+    
+    .dark-mode .book-btn:hover {
+        background-color: var(--accent-gold);
+        color: var(--dark-bg);
+    }
+}
+
+.dark-mode .book-btn {
+    background-color: var(--accent-gold);
+    color: var(--dark-bg);
+}
+
+/* Navigation */
+nav.navbar {
+    background-color: var(--card-bg) !important;
+    box-shadow: 0 2px 10px var(--shadow-color);
 }
 
 nav .logo {
@@ -47,7 +138,7 @@ nav .logo:hover {
 }
 
 nav .navbar-nav .nav-link {
-    color: black;
+    color: var(--text-color);
     font-size: 16px;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -58,10 +149,20 @@ nav .navbar-nav .nav-link:hover {
     color: var(--main-color);
 }
 
+.dark-mode nav .navbar-nav .nav-link.active,
+.dark-mode nav .navbar-nav .nav-link:hover {
+    color: var(--accent-gold);
+}
+
 nav .navbar-toggler:focus {
     box-shadow: none;
 }
 
+nav .navbar-toggler i {
+    color: var(--text-color);
+}
+
+/* Main Landing */
 section .main-landing {
     background-image: url(../imgs/video.png);
     background-size: cover;
@@ -73,18 +174,27 @@ section .main-landing {
 }
 
 section .main-landing .overlay {
-    background-color: rgba(124, 106, 70, 0.5);
+    background-color: rgba(var(--main-color-rgb), 0.5);
     width: 100%;
     height: 100%;
+}
+
+.dark-mode section .main-landing .overlay {
+    background-color: rgba(26, 24, 20, 0.7);
 }
 
 section .main-landing .text {
     font-family: 'Mulish', sans-serif !important;
 }
 
+section .main-landing .text h2 {
+    color: white;
+}
+
 section .main-landing .text p {
     max-width: 800px;
     margin: auto;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 section .main-landing .overlay .mouse-scroll {
@@ -107,16 +217,35 @@ section .main-landing .overlay .mouse-scroll i {
     -o-animation: bouncing .8s ease-in-out infinite;
 }
 
+/* Book Room Section */
+.book-room {
+    background-color: var(--main-bg-color);
+    padding: 20px;
+}
+
+/* Cards */
 section .cards {
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
-    background-color: #fff;
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border: 1px solid var(--border-color);
 }
 
 section .cards:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+.dark-mode section .cards {
+    background-color: var(--dark-card);
+    border-color: var(--dark-border);
+}
+
+.dark-mode section .cards:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent-gold);
 }
 
 section .cards img {
@@ -124,13 +253,39 @@ section .cards img {
     object-fit: cover;
 }
 
-section .title h3, .title p, section .card-body p {
+section .title h3 {
+    font-family: 'Mulish', sans-serif;
+    color: var(--text-color) !important;
+}
+
+.dark-mode section .title h3 {
+    color: var(--dark-text) !important;
+}
+
+section .title p {
     font-family: 'Mulish', sans-serif;
     color: var(--main-color) !important;
 }
 
+.dark-mode section .title p {
+    color: var(--accent-gold) !important;
+}
+
+section .card-body p {
+    font-family: 'Mulish', sans-serif;
+    color: var(--main-color) !important;
+}
+
+.dark-mode section .card-body p {
+    color: var(--accent-gold) !important;
+}
+
 section .card-body .book hr {
-    border-color: var(--main-color);
+    border-color: var(--border-color);
+}
+
+.dark-mode section .card-body .book hr {
+    border-color: var(--dark-border);
 }
 
 section .vector {
@@ -143,11 +298,19 @@ section .vector {
     border-radius: 50%;
 }
 
+.dark-mode section .vector {
+    background-color: var(--dark-surface);
+}
+
 section .vector img {
     width: 60%;
     height: auto;
+    filter: brightness(0) saturate(100%) invert(42%) sepia(15%) saturate(1020%) hue-rotate(10deg) brightness(94%) contrast(88%);
 }
 
+.dark-mode section .vector img {
+    filter: brightness(0) saturate(100%) invert(79%) sepia(11%) saturate(1018%) hue-rotate(2deg) brightness(90%) contrast(89%);
+}
 
 @media (max-width: 768px) {
     .cards img {
@@ -160,9 +323,15 @@ section .vector img {
     }
 }
 
-
+/* Footer */
 footer {
-    background-color: var(--main-color);
+    background-color: var(--footer-bg);
+    transition: background-color 0.4s ease;
+}
+
+.dark-mode footer {
+    background-color: var(--dark-surface);
+    border-top: 1px solid var(--dark-border);
 }
 
 footer .nav-link {
@@ -176,24 +345,53 @@ footer .nav-link:hover {
     color: #e0e0e0;
 }
 
+.dark-mode footer .nav-link {
+    color: var(--dark-text-muted);
+}
+
+.dark-mode footer .nav-link:hover {
+    color: var(--accent-gold);
+}
+
+footer h3, footer h5 {
+    color: white;
+}
+
+.dark-mode footer h3, .dark-mode footer h5 {
+    color: var(--dark-text);
+}
+
+footer p, footer .small {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode footer p, .dark-mode footer .small {
+    color: var(--dark-text-muted);
+}
+
 footer form {
     width: 340px;
     position: relative;
 }
 
 footer form input[type="email"] {
-    background-color: white;
+    background-color: var(--input-bg);
     width: 100%;
     border: none;
     border-radius: 8px;
     height: 48px;
     padding-right: 120px;
-    color: #333;
+    color: var(--text-color);
     font-size: 15px;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 footer form input[type="email"]::placeholder {
     color: #999;
+}
+
+.dark-mode footer form input[type="email"]::placeholder {
+    color: var(--dark-text-muted);
 }
 
 footer form input[type="submit"] {
@@ -210,6 +408,20 @@ footer form input[type="submit"] {
     border: none;
     line-height: 1;
     white-space: nowrap;
+    cursor: pointer;
+}
+
+.dark-mode footer form input[type="submit"] {
+    background-color: var(--accent-gold);
+    color: var(--dark-bg);
+}
+
+footer hr {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode footer hr {
+    border-color: var(--dark-border);
 }
 
 @keyframes bouncing { 
